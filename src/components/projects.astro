@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import svgl from "../../public/svgl.png";
 import stockin from "../../public/stockin.png";
 import moviesfordevs from "../../public/moviesfordevs.png";
-import tron from "../../public/tron.png";
+import velez from "../../public/velez.png";
 
 interface Project {
   title: string;
@@ -19,7 +19,7 @@ const projects: Project[] = [
     image: moviesfordevs as ImageMetadata,
     link: "https://github.com/gothsec/MoviesForDevs",
     preview: "https://movies-for-devs.vercel.app",
-    status: "On Development",
+    status: "Deployed",
   },
   {
     title: "StockIn",
@@ -36,11 +36,11 @@ const projects: Project[] = [
     status: "Contributor",
   },
   {
-    title: "Tron Legacy Web",
-    image: tron as ImageMetadata,
-    link: "https://github.com/Gothsec/Tron-Legacy-web",
-    preview: "https://tron-legacy-web.vercel.app/",
-    status: "Template (not official)",
+    title: "Rifas Velez Web",
+    image: velez as ImageMetadata,
+    link: "https://github.com/Buga-Software/rifasvelez-web",
+    preview: "https://www.rifasvelez.com",
+    status: "Deployed",
   },
 ];
 ---
