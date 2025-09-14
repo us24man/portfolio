@@ -11,7 +11,7 @@ const CategoryIcons = {
       <path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path>
     </svg>
   ),
-  "Mobile Development": (
+  "GIS Analysis": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -38,18 +38,14 @@ const SkillsList = () => {
 
   const skills = {
     "Web Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Portfolio websites",
+      "Backend API development with Node.js & Express as well as Python & Flask",
+      "Frontend development with React, Next.js & Astro",
+      "Spatial databases with PostGIS & MongoDB",
     ],
-    "Mobile Development": [
-      "Mobile-friendly web apps",
-      "React Native mobile apps",
-    ],
-    "UI/UX Design & Prototyping": [
-      "UI design with Figma & Canva",
-      "UX research & improvements",
-      "Prototyping for websites & mobile apps",
+    "GIS Analysis": [
+      "Geospatial data processing with Python (GeoPandas, Shapely, Rasterio)",
+      "Plugin development in QGIS using PyQGIS",
+      "Web mapping with Leaflet.js, Mapbox GL JS And Google Maps API",
     ],
   };
 
