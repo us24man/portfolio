@@ -154,7 +154,10 @@ const navItems: NavItem[] = [
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.6 };
+    const observerOptions = {
+      threshold: 0.3, // Reduced threshold for better detection
+      rootMargin: "-20% 0px -20% 0px", // Add margin to trigger earlier
+    };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
@@ -174,6 +177,35 @@ const navItems: NavItem[] = [
       observerOptions
     );
     sections.forEach((section) => observer.observe(section));
+
+    // Set initial active state for home section when page loads at top
+    const setInitialActiveState = () => {
+      if (window.scrollY < 100) {
+        // If near top of page
+        navLinks.forEach((link) => link.classList.remove("active"));
+        const homeLink = document.querySelector('nav a[href="#home"]');
+        if (homeLink) {
+          homeLink.classList.add("active");
+        }
+      }
+    };
+
+    // Set initial state
+    setInitialActiveState();
+
+    // Also check on scroll for edge case
+    let initialScrollTimeout: ReturnType<typeof setTimeout> | null = null;
+    const handleInitialScroll = () => {
+      if (initialScrollTimeout) clearTimeout(initialScrollTimeout);
+      initialScrollTimeout = setTimeout(setInitialActiveState, 100);
+    };
+
+    window.addEventListener("scroll", handleInitialScroll, { passive: true });
+
+    // Clean up after 3 seconds
+    setTimeout(() => {
+      window.removeEventListener("scroll", handleInitialScroll);
+    }, 3000);
   });
 </script>
 
